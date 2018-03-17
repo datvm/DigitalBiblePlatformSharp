@@ -176,53 +176,210 @@ namespace DigitalBiblePlatformSharp.ApiModels
     public class VolumeListingResponse
     {
 
-        /// <summary>
+          /// <summary>
         /// <para>volumes (array): an array of volumes with the following fields: </para>
+        /// </summary>
+        [JsonProperty("volumes")]
+        public string Volumes { get ; set; }
+
+        /// <summary>
         /// <para>dam_id: DAM ID of volume. </para>
+        /// </summary>
+        [JsonProperty("dam_id")]
+        public string DamId { get; set; }
+
+        /// <summary>
         /// <para>fcbh_id : the volume FCBH DAM ID. </para>
+        /// </summary>
+        [JsonProperty("fcbh_id")]
+        public string FcbhId { get; set; }
+
+        /// <summary>
         /// <para>volume_name: Name of volume. </para>
+        /// </summary>
+        [JsonProperty("volume_name")]
+        public string VolumeName{ get; set; }
+
+        /// <summary>
         /// <para>status: [live|disabled|incomplete|waiting_review|in_review|discontinued] 
         /// Publishing status of volume. </para>
+        /// </summary>
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        /// <summary>
         /// <para>dbp_agreement (optional): [true|false] Whether or not a DBP Agreement has 
         /// been executed between FCBH and the organization to whom the volume belongs. </para>
+        /// </summary>
+        [JsonProperty("dbp_agreement")]
+        public string DbpAgreement { get; set; }
+
+        /// <summary>
         /// <para>expiration: expiration date. </para>
+        /// </summary>
+        [JsonProperty("expiration")]
+        public string Expiration { get; set; }
+
+        /// <summary>
         /// <para>language_code: DBP language code </para>
+        /// </summary>
+        [JsonProperty("language_code")]
+        public string LanguageCode { get; set; }
+
+        /// <summary>
         /// <para>language_name: native language name of the language of the volume. </para>
+        /// </summary>
+        [JsonProperty("language_name")]
+        public string LanguageName { get; set; }
+
+        /// <summary>
         /// <para>language_english: English language name of the language of the volume. </para>
+        /// </summary>
+        [JsonProperty("language_english")]
+        public string LanguageEnglish { get; set; }
+
+        /// <summary>
         /// <para>language_iso: ISO 639-3 language code. </para>
+        /// </summary>
+        [JsonProperty("language_iso")]
+        public string LanguageIso { get; set; }
+
+        /// <summary>
         /// <para>language_iso_2B: ISO 639-2B language code. </para>
+        /// </summary>
+        [JsonProperty("language_iso_2B")]
+        public string LanguageIso2B { get; set; }
+
+        /// <summary>
         /// <para>language_iso_2T: ISO 639-2T language code. </para>
+        /// </summary>
+        [JsonProperty("language_iso_2T")]
+        public string LanguageIso2T { get; set; }
+
+        /// <summary>
         /// <para>language_iso_1: ISO 639-1 language code. </para>
+        /// </summary>
+        [JsonProperty("language_iso_1")]
+        public string LanguageIso1 { get; set; }
+
+        /// <summary>
         /// <para>language_iso_name: ISO  language name. </para>
-        /// <para>language_family_code: DBP language code of language family to which this 
-        /// language belongs. </para>
-        /// <para>language_family_name: native language name of language family to which this 
-        /// language belongs. </para>
+        /// </summary>
+        [JsonProperty("language_iso_name")]
+        public string LanguageIsoName { get; set; }
+
+        /// <summary>
+        /// <para>language_family_code: DBP language code of language family to which this language belongs. </para>
+        /// </summary>
+        [JsonProperty("language_family_code")]
+        public string LanguageFamilyCode { get; set; }
+
+        /// <summary>
+        /// <para>language_family_name: native language name of language family to which this language belongs. </para>
+        /// </summary>
+        [JsonProperty("language_family_name")]
+        public string LanguageFamilyName { get; set; }
+
+        /// <summary>
         /// <para>language_family_english: English language name of language family to which 
         /// this language belongs. </para>
+        /// </summary>
+        [JsonProperty("language_family_english")]
+        public string LanguageFamilyEnglish { get; set; }
+
+        /// <summary>
         /// <para>language_family_iso: ISO 639-3 language code. </para>
+        /// </summary>
+        [JsonProperty("language_family_iso")]
+        public string LanguageFamilyIso { get; set; }
+
+        /// <summary>
         /// <para>language_family_iso_2B: ISO 639-2B language code. </para>
+        /// </summary>
+        [JsonProperty("language_family_iso_2B")]
+        public string LanguageFamilyIso2B { get; set; }
+
+        /// <summary>
         /// <para>language_family_iso_2T: ISO 639-2T language code. </para>
+        /// </summary>
+        [JsonProperty("language_family_iso_2T")]
+        public string LanguageFamilyIso2T { get; set; }
+
+        /// <summary>
         /// <para>language_family_iso_1: ISO 639-1 language code. </para>
+        /// </summary>
+        [JsonProperty("language_family_iso_1")]
+        public string LanguageFamilyIso1 { get; set; }
+
+        /// <summary>
         /// <para>version_code: Version of volume. </para>
+        /// </summary>
+        [JsonProperty("version_code")]
+        public string VersionCode { get; set; }
+
+        /// <summary>
         /// <para>updated_on: Date and time of last update. </para>
+        /// </summary>
+        [JsonProperty("updated_on")]
+        public string UpdatedOn { get; set; }
+
+        // <summary>
         /// <para>right_to_left: [0|1] Boolean with TRUE (1) indicating that the language is 
         /// read right to left. </para>
+        /// </summary>
+        [JsonProperty("right_to_left")]
+        public string RightToLeft { get; set; }
+
+        /// <summary>
         /// <para>num_art: Number of art files for this volume. </para>
+        /// </summary>
+        [JsonProperty("num_art")]
+        public string NumArt { get; set; }
+
+        /// <summary>
         /// <para>num_sample_audio: Number of sample audio files for this volume. </para>
+        /// </summary>
+        [JsonProperty("num_sample_audio")]
+        public string NumSampleAudio { get; set; }
+
+        /// <summary>
         /// <para>sku: Legacy stocknumber, while supported. </para>
+        /// </summary>
+        [JsonProperty("sku")]
+        public string Sku { get; set; }
+
+        /// <summary>
         /// <para>media:  media format (text, audio, video,...) </para>
+        /// </summary>
+        [JsonProperty("media")]
+        public string Media { get; set; }
+
+        /// <summary>
         /// <para>media_type: The variety of the media, such as drama and non-drama. </para>
+        /// </summary>
+        [JsonProperty("media_type")]
+        public string MediaType { get; set; }
+
+        /// <summary>
         /// <para>delivery:  array of delivery methods </para>
+        /// </summary>
+        [JsonProperty("delivery")]
+        public string Delivery { get; set; }
+
+        /// <summary>
         /// <para>resolution: Array of resolutions available, if applicable. </para>
+        /// </summary>
+        [JsonProperty("resolution")]
+        public string Resolution { get; set; }
+        /// <summary>
         /// <para>font: If this volume has text that cannot be displayed properly using most 
         /// "standard" fonts, a custom font will be assigned. This field can either be 
         /// null (no font assigned), or a JSON object containing information about the 
         /// font. For information about the structure of this JSON object, see the 
         /// documentation for the /text/font call. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
+        [JsonProperty("font")]
+        public string Font { get; set; }
 
 
     }
