@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -175,8 +175,7 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class VolumeListingResponse
     {
-
-          /// <summary>
+        /// <summary>
         /// <para>volumes (array): an array of volumes with the following fields: </para>
         /// </summary>
         [JsonProperty("volumes")]
@@ -380,8 +379,6 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// </summary>
         [JsonProperty("font")]
         public string Font { get; set; }
-
-
     }
 
     /// <summary>
@@ -634,18 +631,30 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class VolumeOrganizationListingResponse
     {
-
         /// <summary>
         /// <para>volumes (array): an array of volumes grouped by organization with the 
         /// following fields: </para>
+        /// </summary>
+        [JsonProperty("volumes")]
+        public string Volumes { get ; set; }
+
+        /// <summary>
         /// <para>organization_name: Name of the organization. </para>
+        /// </summary>
+        [JsonProperty("organization_name")]
+        public string OrganizationName { get; set; }
+
+        /// <summary>
         /// <para>organization_id : The ID of the organization. </para>
+        /// </summary>
+        [JsonProperty("organization_id")]
+        public string OrganizationId { get; set; }
+
+        /// <summary>
         /// <para>number_volumes: Number of volumes. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("number_volumes")]
+        public string NumberVolumes { get; set; }
     }
 
     /// <summary>
@@ -685,20 +694,32 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class BookOrderListingResponse
     {
-
         /// <summary>
         /// <para>array of books: </para>
         /// <para>dam_id_root: Seven character DAM ID used to define a book order. </para>
+        /// </summary>
+        [JsonProperty("dam_id_root")]
+        public string DamIdRoot { get ; set; }
+
+        /// <summary>
         /// <para>book_order: The absolute book order number. If only six characters of a DAM 
         /// ID are provided as input, which results in a matching OT and NT book list 
         /// being returned, the NT books will be numbered with Matthew as 55. </para>
+        /// </summary>
+        [JsonProperty("book_order")]
+        public string BookOrder { get; set; }
+
+        /// <summary>
         /// <para>book_code: The OSIS book code for the book. </para>
+        /// </summary>
+        [JsonProperty("book_code")]
+        public string BookCode { get; set; }
+
+        /// <summary>
         /// <para>book_name: The English name of the book. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("book_name")]
+        public string BookName { get; set; }
     }
 
     /// <summary>
@@ -758,21 +779,43 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class BookListingResponse
     {
-
         /// <summary>
         /// <para>books (array): an array of books for the specified DAM ID with the following 
         /// fields: </para>
+        /// </summary>
+        [JsonProperty("books")]
+        public string Books { get ; set; }
+
+        /// <summary>
         /// <para>dam_id_root: First 7 characters of DAM ID, or the full DAM ID if entered. </para>
+        /// </summary>
+        [JsonProperty("dam_id_root")]
+        public string DamIdRoot { get; set; }
+
+        /// <summary>
         /// <para>book_id:  OSIS book code if the volume is a standard bible, or the book order 
         /// if a story volume. </para>
+        /// </summary>
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
+
+        /// <summary>
         /// <para>book_name:  Book name. </para>
+        /// </summary>
+        [JsonProperty("book_name")]
+        public string BookName { get; set; }
+
+        /// <summary>
         /// <para>book_order: Order of book in collection. </para>
+        /// </summary>
+        [JsonProperty("book_order")]
+        public string BookOrder { get; set; }
+
+        /// <summary>
         /// <para>number_of_chapters:  Number of chapters in book. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("number_of_chapters")]
+        public string NumberOfChapters { get; set; }
     }
 
     /// <summary>
@@ -786,11 +829,11 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// <para>array of OSIS book codes, DBP collection codes and their associated native 
         /// language name. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
+        [JsonProperty("OSIS")]
+        public string OSIS { get ; set; }
 
 
-    }
+}
 
     /// <summary>
     /// <para>This call is used to create a record of native language book and collection 
@@ -841,21 +884,44 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class ChapterListingResponse
     {
-
         /// <summary>
-        /// <para>(array): An array of chapters for the specified book(s) and volume(s) with 
+        ///<para>(array): An array of chapters for the specified book(s) and volume(s) with 
         /// the following fields: </para>
-        /// <para>dam_id: DAM ID of the volume requested or both NT and OT if a 6 character DAM 
-        /// ID is provided for the search. </para>
-        /// <para>book_id: OSIS book code. </para>
-        /// <para>chapter_id: The id/number of the chapter </para>
-        /// <para>chapter_name: The name of the chapter </para>
-        /// <para>default: Specifies if this chapter is the default chapter for the given 
-        /// volume and book. </para>
         /// </summary>
         [JsonProperty("chapters")]
         public string Chapters { get; set; }
 
+        /// <summary>
+        /// <para>dam_id: DAM ID of the volume requested or both NT and OT if a 6 character DAM 
+        /// ID is provided for the search. </para>
+        /// </summary>
+        [JsonProperty("dam_id")]
+        public string DamId { get; set; }
+
+        /// <summary>
+        /// <para>book_id: OSIS book code. </para>
+        /// </summary>
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
+
+        /// <summary>
+        /// <para>chapter_id: The id/number of the chapter </para>
+        /// </summary>
+        [JsonProperty("chapter_id")]
+        public string ChapterId { get; set; }
+
+        /// <summary>
+        /// <para>chapter_name: The name of the chapter </para>
+        /// </summary>
+        [JsonProperty("chapter_name")]
+        public string ChapterName { get; set; }
+
+        /// <summary>
+        /// <para>default: Specifies if this chapter is the default chapter for the given 
+        /// volume and book. </para>
+        /// </summary>
+        [JsonProperty("default")]
+        public string Default { get; set; }
 
     }
 
@@ -893,11 +959,11 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// <para>array of numerals returned in sequence from the start to the end requested. </para>
         /// <para>num_*:  where * is the Hindu numeral, such as num_20 and num_0. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
+        [JsonProperty("numerals")]
+        public string Numerals { get ; set; }
 
 
-    }
+}
 
     /// <summary>
     /// <para>Creates a numbers record for a language for which the numbers record does not 
@@ -1002,16 +1068,34 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// <summary>
         /// <para>locations (array): An array of matching file locations given the specified 
         /// filter. Will have the following fields: </para>
+        /// </summary>
+        [JsonProperty("locations")]
+        public string Locations { get; set; }
+
+        /// <summary>
         /// <para>server: Example cloud.faithcomesbyhearing.com </para>
+        /// </summary>
+        [JsonProperty("server")]
+        public string Server { get; set; }
+
+        /// <summary>
         /// <para>root_path: Example /volumeassets </para>
+        /// </summary>
+        [JsonProperty("root_path")]
+        public string RootPath { get; set; }
+
+        /// <summary>
         /// <para>priority: Example 6 </para>
+        /// </summary>
+        [JsonProperty("priority")]
+        public string Priority { get; set; }
+
+        /// <summary>
         /// <para>volume_id: the location directory and asset file basename for the volume - 
         /// the DAM ID for new volumes or the legacy sku for legacy volumes. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("volume_id")]
+        public string VolumeId { get; set; }
     }
 
     /// <summary>
@@ -1020,22 +1104,59 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class OrganizationListingResponse
     {
-
         /// <summary>
         /// <para>(array): an array of organization with the following fields: </para>
-        /// <para>id: the id of the organization </para>
-        /// <para>name: the native language name of the organization. </para>
-        /// <para>english_name: the English name of the organization. </para>
-        /// <para>description: the native language description of the organization. </para>
-        /// <para>english_description: the English description of the organization. </para>
-        /// <para>web_url: the Web URL for the organization </para>
-        /// <para>donation_url: the URL for donations to the organization </para>
-        /// <para>enabled: [true|false] whether or not the organization is enabled (active) </para>
         /// </summary>
         [JsonProperty("organizations")]
         public string Organizations { get; set; }
 
+        /// <summary>
+        /// <para>id: the id of the organization </para>
+        /// </summary>
+        [JsonProperty("id")]
+        public string Id { get; set; }
 
+        /// <summary>
+        /// <para>name: the native language name of the organization. </para>
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// <para>english_name: the English name of the organization. </para>
+        /// </summary>
+        [JsonProperty("english_name")]
+        public string EnglishName { get; set; }
+
+        /// <summary>
+        /// <para>description: the native language description of the organization. </para>
+        /// </summary>
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// <para>english_description: the English description of the organization. </para>S
+        /// </summary>
+        [JsonProperty("english_description")]
+        public string EnglishDescription { get; set; }
+
+        /// <summary>
+        /// <para>web_url: the Web URL for the organization </para>
+        /// </summary>
+        [JsonProperty("web_url")]
+        public string WebUrl { get; set; }
+
+        /// <summary>
+        /// <para>donation_url: the URL for donations to the organization </para>
+        /// </summary>
+        [JsonProperty("donation_url")]
+        public string DonationUrl { get; set; }
+
+        /// <summary>
+        /// <para>enabled: [true|false] whether or not the organization is enabled (active) </para>
+        /// </summary>
+        [JsonProperty("enabled")]
+        public bool Enabled { get; set; }
     }
 
     /// <summary>
@@ -1076,16 +1197,34 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// <summary>
         /// <para>locations (array): An array of matching file locations given the specified 
         /// filter. Will have the following fields: </para>
+        /// </summary>
+        [JsonProperty("locations")]
+        public string Locations { get; set; }
+
+        /// <summary>
         /// <para>protocol: HTTP, HTTPS, RTMP </para>
+        /// </summary>
+        [JsonProperty("protocol")]
+        public string Protocol { get; set; }
+
+        /// <summary>
         /// <para>server: Example mp3.faithcomesbyhearing.com </para>
+        /// </summary>
+        [JsonProperty("server")]
+        public string Server { get; set; }
+
+        /// <summary>
         /// <para>root_path: Example /mp3audiobibles2/ </para>
+        /// </summary>
+        [JsonProperty("root_path")]
+        public string RootPath { get; set; }
+
+        /// <summary>
         /// <para>CDN: Boolean specifies if the server is a CDN and geographical distributes 
         /// requests </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("CDN")]
+        public string CDN { get; set; }
     }
 
     /// <summary>
@@ -1100,14 +1239,27 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// <summary>
         /// <para>chapter (array): Based on the request, any number of chapter information is 
         /// returned to the caller with the following fields: </para>
+        /// </summary>
+        [JsonProperty("chapter")]
+        public string Chapter { get; set; }
+
+        /// <summary>
         /// <para>book_id: unique ID for the associated book for this chapter </para>
+        /// </summary>
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
+
+        /// <summary>
         /// <para>chapter_id: The id of the chapter </para>
+        /// </summary>
+        [JsonProperty("chapter_id")]
+        public string ChapterId { get; set; }
+
+        /// <summary>
         /// <para>path: relative file path for the audio file </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("path")]
+        public string Path { get; set; }
     }
 
     /// <summary>
@@ -1125,7 +1277,17 @@ namespace DigitalBiblePlatformSharp.ApiModels
         [JsonProperty("Array of verses")]
         public string ArrayOfVerses { get; set; }
 
+        /// <summary>
+        /// <para>verse_id: id of verse </para>
+        /// </summary>
+        [JsonProperty("verse_id")]
+        public string VerseId { get; set; }
 
+        /// <summary>
+        /// <para>verse_start: time start in seconds of the verse </para>
+        /// </summary>
+        [JsonProperty("verse_start")]
+        public string VerseStart { get; set; }
     }
 
     /// <summary>
@@ -1186,25 +1348,79 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class VerseResponse
     {
+        /// <summary>
+        /// DBT
+        /// </summary>
+        [JsonProperty("DBT")]
+        public string DBT { get ; set; }
 
         /// <summary>
-        /// <para>DBT: </para>
         /// <para>verses (array): An array of verses that match the request with the following 
         /// fields: </para>
+        /// </summary>
+        [JsonProperty("verses")]
+        public string Verses { get; set; }
+
+        /// <summary>
         /// <para>book_name </para>
+        /// </summary>
+        [JsonProperty("book_name")]
+        public string BookName { get; set; }
+
+        /// <summary>
         /// <para>book_id </para>
+        /// </summary>
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
+
+        /// <summary>
         /// <para>book_order </para>
+        /// </summary>
+        [JsonProperty("book_order")]
+        public string BookOrder { get; set; }
+
+        /// <summary>
         /// <para>chapter_id </para>
+        /// </summary>
+        [JsonProperty("chapter_id")]
+        public string ChapterId { get; set; }
+
+        /// <summary>
         /// <para>chapter_title </para>
+        /// </summary>
+        [JsonProperty("chapter_title")]
+        public string ChapterTitle { get; set; }
+
+        /// <summary>
         /// <para>paragraph_number </para>
+        /// </summary>
+        [JsonProperty("paragraph_number")]
+        public string ParagraphNumber { get; set; }
+
+        /// <summary>
         /// <para>verse_id </para>
+        /// </summary>
+        [JsonProperty("verse_id")]
+        public string VerseId { get; set; }
+
+        /// <summary>
         /// <para>verse_text - verse text will contain special markup characters for 
         /// lightweight presentational purposes. Some of these markup sets include: </para>
+        /// </summary>
+        [JsonProperty("verse_text")]
+        public string VerseText { get; set; }
+
+        /// <summary>
         /// <para>{WOJ} - denotes text spoken by Jesus </para>
+        /// </summary>
+        [JsonProperty("WOJ")]
+        public string WOJ { get; set; }
+
+        /// <summary>
         /// <para>{XREF} - cross reference to another verse </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
+        [JsonProperty("XREF")]
+        public string XREF { get; set; }
 
         /// <summary>
         /// <para>OSIS: </para>
@@ -1218,10 +1434,8 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// native format response will be returned to the caller and will contain error 
         /// code and messaging information. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("OSIS")]
+        public string OSIS { get; set; }
     }
 
     /// <summary>
@@ -1242,18 +1456,51 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// <summary>
         /// <para>results (array): An array of results found for the specified search, each 
         /// result has the following fields: </para>
+        /// </summary>
+        [JsonProperty("results")]
+        public string Results { get; set; }
+
+        /// <summary>
         /// <para>dam_id: DAM ID of the volume </para>
+        /// </summary>
+        [JsonProperty("dam_id")]
+        public string DamId { get; set; }
+
+        /// <summary>
         /// <para>book_name: Book name. </para>
+        /// </summary>
+        [JsonProperty("book_name")]
+        public string BookName { get; set; }
+
+        /// <summary>
         /// <para>book_id: Book id. </para>
+        /// </summary>
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
+
+        /// <summary>
         /// <para>book_order: Order of book in volume. </para>
+        /// </summary>
+        [JsonProperty("book_order")]
+        public string BookOrder { get; set; }
+
+        /// <summary>
         /// <para>chapter_id: Chapter id. </para>
+        /// </summary>
+        [JsonProperty("chapter_id")]
+        public string ChapterId { get; set; }
+
+        /// <summary>
         /// <para>verse_id: Verse id. </para>
+        /// </summary>
+        [JsonProperty("verse_id")]
+        public string VerseId { get; set; }
+
+        /// <summary>
         /// <para>verse_text: The full text of the result returned. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("verse_text")]
+        public string VerseText { get; set; }
     }
 
     /// <summary>
@@ -1275,15 +1522,33 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// <summary>
         /// <para>results (array): An array of results found for the specified search, each 
         /// result has the following fields: </para>
+        /// </summary>
+        [JsonProperty("results")]
+        public string Results { get; set; }
+
+        /// <summary>
         /// <para>book_name: Book name. </para>
+        /// </summary>
+        [JsonProperty("book_name")]
+        public string BookName { get; set; }
+
+        /// <summary>
         /// <para>book_id: Book id. </para>
+        /// </summary>
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
+
+        /// <summary>
         /// <para>book_order: Order of book in volume. </para>
+        /// </summary>
+        [JsonProperty("book_order")]
+        public string BookOder { get; set; }
+
+        /// <summary>
         /// <para>results: Number of results. </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("Number of results")]
+        public string NumberOfResults { get; set; }
     }
 
     /// <summary>
@@ -1293,17 +1558,24 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class VideoLocationResponse
     {
-
         /// <summary>
         /// <para>locations (array): An array of matching file locations given the specified 
         /// filter. Will have the following fields: </para>
+        /// </summary>
+        [JsonProperty("locations")]
+        public string Locations { get; set; }
+
+        /// <summary>
         /// <para>protocol: HTTP, HTTPS </para>
+        /// </summary>
+        [JsonProperty("protocol")]
+        public string Protocol { get; set; }
+
+        /// <summary>
         /// <para>server: Example video.dbt.io </para>
         /// </summary>
-        //[JsonProperty("")]
-        //public string  {get ; set; }
-
-
+        [JsonProperty("server")]
+        public string Server { get; set; }
     }
 
     /// <summary>
@@ -1318,34 +1590,92 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class VideoPathResponse
     {
+        /// <para>each element contains the following </para>
 
         /// <summary>
-        /// <para>each element contains the following </para>
         /// <para>segment_order: Order of the segment in the volume. </para>
+        /// </summary>
+        [JsonProperty("segment_order")]
+        public string SegmentOrder { get; set; }
+
+        /// <summary>
         /// <para>title: Segment title. (Not included for DOOR International videos.) </para>
+        /// </summary>
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
+        /// <summary>
         /// <para>book_id: OSIS book code of book to which segment belongs, which is only 
         /// applicable to standard Bible video volumes. </para>
+        /// </summary>
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
+
+        /// <summary>
         /// <para>path: relative file path for the video file. For DOOR International videos, 
         /// this path refers to the "story" portion of the video. </para>
+        /// </summary>
+        [JsonProperty("path")]
+        public string PathDoor { get; set; }
+
+        /// <summary>
         /// <para>chapter_start: Chapter in which segment starts, if standard Bible volume. </para>
+        /// </summary>
+        [JsonProperty("chapter_start")]
+        public string ChapterStart { get; set; }
+
+        /// <summary>
         /// <para>verse_start: Verse in which segment starts, if standard Bible volume. </para>
+        /// </summary>
+        [JsonProperty("verse_start")]
+        public string VerseStart { get; set; }
+
+        /// <summary>
         /// <para>chapter_end: Chapter in which segment ends, if standard Bible volume. </para>
+        /// </summary>
+        [JsonProperty("chapter_end")]
+        public string ChapterEnd { get; set; }
+
+        /// <summary>
         /// <para>verse_end: Verse in which segment ends, if standard Bible volume. </para>
+        /// </summary>
+        [JsonProperty("verse_end")]
+        public string VerseEnd { get; set; }
+
+        /// <summary>
         /// <para>references: Array of verse references to which the video segment applies if a 
         /// story volume. </para>
+        /// </summary>
+        [JsonProperty("references")]
+        public string References { get; set; }
+
+        /// <summary>
         /// <para>related_videos: Array containing paths to related video segments. Used only 
         /// for DOOR International videos. Each element contains the following: </para>
+        /// </summary>
+        [JsonProperty("related_videos")]
+        public string RlatedVideos { get; set; }
+
+        /// <summary>
         /// <para>video_type: Indicates what type of related video it is. Can be "Intro", 
         /// "Topic", or "More Info". </para>
+        /// </summary>
+        [JsonProperty("video_type")]
+        public string VideoType { get; set; }
+
+        /// <summary>
         /// <para>path: Relative path for the video file. </para>
+        /// </summary>
+        [JsonProperty("path")]
+        public string Path { get; set; }
+
+        /// <summary>
         /// <para>thumbnail_image: The file name for the thumbnail image that represents the 
         /// video. Used only for DOOR International videos. The base URL for thumbnails 
         /// is currently: http://cloud.faithcomesbyhearing.com/segment-art/700X510/ </para>
         /// </summary>
-        //[JsonProperty("array of video segments:")]
-        //public string ArrayOfVideoSegments: {get ; set; }
-
-
+        [JsonProperty("thumbnail_image")]
+        public string ThumbnailImage { get; set; }
     }
 
     /// <summary>
@@ -1355,19 +1685,33 @@ namespace DigitalBiblePlatformSharp.ApiModels
     /// </summary>
     public class JesusFilmListingResponse
     {
+        /// <para>each element contains the following </para>
 
         /// <summary>
-        /// <para>each element contains the following </para>
         /// <para>id: Id of segment. </para>
+        /// </summary>
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        /// <summary>
         /// <para>name: Native language name/description of the segment. </para>
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
         /// <para>filename: URL with which to retrieve segment. (Parameter name left over from 
         /// proof of concept. Will probably change in new API version). </para>
-        /// <para>verses: Array of verse references to which the video segment applies. </para>
         /// </summary>
-        //[JsonProperty("array of video segments:")]
-        //public string ArrayOfVideoSegments: {get ; set; }
+        [JsonProperty("filename")]
+        public string FileName { get; set; }
 
-
+        /// <summary>
+        /// <para>verses: Array of verse references to which the video segment applies. </para>
+        /// proof of concept. Will probably change in new API version). </para>
+        /// </summary>
+        [JsonProperty("verses")]
+        public string Verses { get; set; }
     }
 
     /// <summary>
