@@ -28,6 +28,11 @@ namespace DigitalBiblePlatformSharp
             return await this.ExecuteGetApiAsync<LanguageListingResponse[]>(request);
         }
 
+        public async Task<VersionListingResponse[]> VersionListingAsync(VersionListingRequest request)
+        {
+            return await this.ExecuteGetApiAsync<VersionListingResponse[]>(request);
+        }
+
         /// <summary>
         /// A general API call for all calls. TResponse can be <typeparamref name="System.Dynamic"/> for
         /// dynamic typed.

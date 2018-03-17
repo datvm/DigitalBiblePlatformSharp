@@ -13,6 +13,7 @@ namespace DigitalBiblePlatformSharp.Test
 
     internal static class TestUtils
     {
+        private const string ApiKeyEnvironmentVariableName = "DBPSharpApiKey";
 
         public const string LogFileLocation = @"D:\Temp\TestLog";
 
@@ -35,6 +36,18 @@ namespace DigitalBiblePlatformSharp.Test
         {
             Assert.IsNotNull(enumerable);
             Assert.AreNotEqual(0, enumerable.Count());
+        }
+
+        public static DigitalBiblePlatformService GetService()
+        {
+            var apiKey = Environment.GetEnvironmentVariable(ApiKeyEnvironmentVariableName);
+
+            if (string.IsNullOrEmpty(apiKey))
+            {
+                throw new ArgumentException($"Api not found. For unit testing, please assign your API Key to environment variable named {ApiKeyEnvironmentVariableName}.");
+            }
+
+            return new DigitalBiblePlatformService(apiKey);
         }
 
     }
