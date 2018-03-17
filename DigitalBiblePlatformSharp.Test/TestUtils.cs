@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,10 @@ namespace DigitalBiblePlatformSharp.Test
             Directory.CreateDirectory(LogFileLocation);
         }
 
-        public static void WriteLogFile<T>(string methodName, T obj)
+        public static void WriteLogFile<T>(T obj, [System.Runtime.CompilerServices.CallerMemberName] string callingMethod = "")
         {
 #if WRITELOGFILE
-            var path = Path.Combine(LogFileLocation, methodName + ".json");
+            var path = Path.Combine(LogFileLocation, callingMethod + ".json");
             var content = (typeof(T) == typeof(string)) ? (obj as string) : JsonConvert.SerializeObject(obj);
 
             File.WriteAllText(path, content);

@@ -24,7 +24,7 @@ namespace DigitalBiblePlatformSharp.Test
         public async Task TestLanguageListingAsync1()
         {
             var result = await this.service.LanguageListingAsync(new LanguageListingRequest());
-            TestUtils.WriteLogFile(nameof(TestLanguageListingAsync1), result);
+            TestUtils.WriteLogFile(result);
 
             TestUtils.IsNotNullOrEmpty(result);
 
@@ -39,7 +39,7 @@ namespace DigitalBiblePlatformSharp.Test
             {
                 Name = "Vietnamese",
             });
-            TestUtils.WriteLogFile(nameof(TestLanguageListingAsync2), result);
+            TestUtils.WriteLogFile(result);
 
             TestUtils.IsNotNullOrEmpty(result);
 
