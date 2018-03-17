@@ -1,0 +1,1 @@
+A wrapper API call to the Developer API of [Digital Bible Platform](https://www.digitalbibleplatform.com/).
