@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DigitalBiblePlatformSharp.Test
 {
@@ -25,7 +26,14 @@ namespace DigitalBiblePlatformSharp.Test
             this.service = new DigitalBiblePlatformService(apiKey);
         }
 
+        [TestMethod]
+        public async Task TestLanguageListingAsync1()
+        {
+            var result = await this.service.LanguageListingAsync(new ApiModels.LanguageListingRequest());
+            TestUtils.WriteLogFile(nameof(TestLanguageListingAsync1), result);
 
+            TestUtils.IsNotNullOrEmpty(result);
+        }
 
     }
     

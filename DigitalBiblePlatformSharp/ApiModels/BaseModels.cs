@@ -6,7 +6,7 @@ using System.Text;
 namespace DigitalBiblePlatformSharp.ApiModels
 {
 
-    public abstract class BaseRequest
+    public abstract class BaseApiRequest
     {
 
         /// <summary>
@@ -14,27 +14,31 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// For library internal use.
         /// </summary>
         [JsonIgnore]
-        public abstract string restUrl { get; }
+        public abstract string RestUrl { get; }
 
         /// <summary>
         /// Your DBT API key provided upon registration.
         /// </summary>
-        public string key { get; set; }
+        [JsonProperty("key")]
+        public string Key { get; set; }
 
         /// <summary>
         /// Specifies the version of the API requested.
         /// </summary>
-        public string v { get; set; }
+        [JsonProperty("v")]
+        public string V { get; set; }
 
         /// <summary>
         /// Specifies the response type requested by the caller. Default is json.
         /// </summary>
-        public ReplyType reply { get; set; }
+        [JsonProperty("reply")]
+        public ReplyType Reply { get; set; }
 
         /// <summary>
         /// Specifies the name of the function returned when a JSONP reply is requested. (Requires reply = jsonp)
         /// </summary>
-        public string callback { get; set; }
+        [JsonProperty("callback")]
+        public string Callback { get; set; }
 
         /// <summary>
         /// If unused the results are as before. If set to \'true\', the results will be prepended with the array of
@@ -42,12 +46,14 @@ namespace DigitalBiblePlatformSharp.ApiModels
         /// an array where the first element is the array of input arguments and the second element will be the results
         /// as normally returned.
         /// </summary>
-        public bool? echo { get; set; }
+        [JsonProperty("echo")]
+        public bool? Echo { get; set; }
 
         /// <summary>
         /// REQUIRED for PUT DBT methods - PUT is not properly supported. To effect DBT methods requiring PUT, use the GET HTTP method and &_method=put.
         /// </summary>
-        public string _method { get; set; }
+        [JsonProperty("_method")]
+        public string _Method { get; set; }
 
     }
 
